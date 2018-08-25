@@ -1,0 +1,48 @@
+{% extends 'header.html' %}
+{% block body %}
+
+<h1>
+    Quiz
+</h1>
+{% from "_formhelpers.html" import render_field %}
+<form method="POST" action="/quiz_next/{{idx}}">
+
+
+
+    {{render_field(form.question, class_="form-control") }}
+
+
+    {{render_field(form.answer, class_="form-control")}}
+
+<div >
+    <input type = "submit" name ="action" class = "btn btn-primary" value="score">
+    </div><br>
+    <div style="align : right">
+    <button type="submit" name="action" class = "btn btn-primary"  value="submit">
+        submit
+    </button>
+    </div>
+
+</form>
+
+{% if call == True %}
+<ul>
+    <li>
+        Cosine Similarity between the text is {{cosine}}/4
+    </li>
+    <li>
+        Sentence to sentence similarity is {{sent_cosine}}/3
+    </li>
+    <li>
+        Keyword matching is {{keywords_match}}/2
+    </li>
+    <li>
+        Length score {{lengthsc}}/1
+    </li>
+
+</ul>
+<center>Total score is {{total}}/10</center>
+{% endif %}
+
+
+{% endblock %}

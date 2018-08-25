@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link href = "{{ url_for('static',filename='css/bootstrap.min.css')}}" rel ="stylesheet">
+    <title>Pbl</title>
+</head>
+
+
+
+<!--header-->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/" ><h2>ASAC</h2></a>
+
+<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    {% if session.logged_in %}
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/quiz_next/0">Quiz</a>
+    </ul>
+
+        <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <div class="dropdown-menu dropdown-menu-right" style ="  right: 0; left: auto;">
+        <a class="dropdown-item" href="/logout">Logout</a>
+        <a class="dropdown-item" href="/about">About</a>
+        </div>
+        </div>
+        </div>
+    {% else %}
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/register" data-toggle="modal" data-target="#Modalsignup">Sign up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login" data-toggle="modal" data-target="#Modallogin">Login</a>
+            </li>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+    {% endif %}
+</>
+
+</nav>
+
+
+<!-- Modal sign up-->
+    <div class="modal fade" id="Modalsignup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="0ModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method=post action="/register">
+
+
+
+                        <dt><label for="name">Name</label>
+                        <dd><input class="form-control" id="name" name="name" type="text" value="">
+
+                        </dd>
+
+                            <dt><label for="username">Username</label>
+                        <dd><input class="form-control" id="username" name="username" type="text" value="">
+
+                        </dd>
+
+                        <dt><label for="password">Password</label>
+                        <dd><input class="form-control" id="password" name="password" type="password" value="">
+
+                        </dd>
+
+
+                        <dt><label for="confirm">Repeat Password</label>
+                        <dd><input class="form-control" id="confirm" name="confirm" type="password" value="">
+
+                        </dd>
+                            <input type = "submit" class = "btn btn-primary" value="Submit">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<!--modal login -->
+    <div class="modal fade" id="Modallogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="1ModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                        <h3>Please login:</h3>
+                        <br>
+                        <form action="/login" class="form" method="post">
+                        <label>Username:</label>
+                        <input type="text" class="form-control" placeholder="Username" name="username" value="">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password" value="">
+                            <br>
+                        <input class="btn" type="submit" value="Login" style="background-color:#FFD166;color:#000">
+                        </form>
+
+                        <div class="container">
+                        <br><p>No account? <a href='/Sign UP'>Sign UP here</a></p>
+                        <br>
+
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- BOdy -->
+<body  background="/static/images/bg1.jpg" style="background-size: 1440px 800px">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src=" {{ url_for('static',filename = 'js/bootstrap.min.js')}}"></script>
+    <br>
+
+    <br>
+    <div class ="container"  style =" min-height:570px;" >
+        <h3>Abstract</h3>
+            <p>Every year many examinations are conducted like competitive, intuitional, non institutional which students apply for. Competitive
+            and entrance exams typically contain objective or multiple choice questions. These exams are evaluated on machine as they
+            conducted on machine and therefore their evaluation is easy. However as these exams accommodate only objective or multiple
+            choice questions the ability to answer descriptive question is still not provided and evaluation of the same. It will be very helpful
+            for educational institutions if the process of evaluation of descriptive answers is automated to capably assess student’s exam
+                answer sheets.</p>
+
+    <br>
+
+        <h3> The Proposed System</h3>
+        <p>The proposed system seeks to implement an application which
+        will be able to evaluate the descriptive answer to a question. It
+        will allot the marks according to the percentage of accuracy
+        present in the answer. This is a software system in which user
+        will be authenticated by using user login. After the
+        authentication, users will be provided with the questions. The
+        proposed system is designed to evaluate answers for five users
+        providing five different answers. The standard answer is stored
+        in the database with the description meaning and keywords.
+        Then it will evaluate each answer by matching the keywords or
+        the key concepts as well as its synonyms with the standard
+        answer. It will also check the grammar and spellings of the
+        words. After the evaluation, it will grade the answer depending
+        on the correctness of the answer. The entire process consists of
+        three main steps: keywords and synonyms extraction, matching
+        of keywords, weighting the keywords and generating score.
+        This evaluation system will grade the answers depending upon
+        the number of keywords matched. All paragraphs must be
+        indented. All paragraphs must be justified, i.e. both left-justified
+        and right-justified.</p>
+    </div>
+
+</body>
+<!--Footer-->
+<footer class="page-footer font-small stylish-color-dark pt-4 mt-4 bg-dark" >
+
+    <!--Footer Links-->
+    <div class="container text-center text-md-left">
+        <div class="row" >
+
+            <!--First column-->
+            <div class="col-md-4">
+                <font color="white">
+                <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Made by:</h5>
+                <p>DARSHAN<br>NAYAN<br>NAVIN<br>VYAS<br>SAHIL</p>
+                </font>
+            </div>
+            <!--/.First column-->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!--Second column-->
+            <div class="col-md-2 mx-auto">
+                <font color="white">
+                <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Emails</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        Kadamdsit16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Joshint16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Joshinnit16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Vyaskit16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Kaduswit16e@student.mes.ac.in
+                    </li>
+                </ul>
+                </font>
+            </div>
+            <!--/.Second column-->
+
+
+
+
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        <font color="white">© 2018 Copyright:</font>
+        <a href="https://pce.ac.in"> Pillai College of Engineering </a>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+
+</html>

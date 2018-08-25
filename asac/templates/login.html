@@ -1,0 +1,23 @@
+{% extends "header.html" %}
+{% block body %}
+
+<p>
+ <div class="container" style="max-width:350px">
+    <br><br><br><br>
+    <center><img class="mb-4" src="/static/images/py.png" alt="" width="72" height="72"></center>
+      <center><h3>Login</h3></center>
+      <br>
+      <form action="" class="form-signin" method="post">
+       <input type="text" class="form-control" placeholder="Username" name="username" value="{{request.form.username}}">
+
+       <input type="password" class="form-control" placeholder="Password" name="password" value="{{request.form.password}}">
+          <br>
+          <center><input class="btn" type="submit" value="Login" style="background-color:#FFD166;color:#000"></center>
+      </form>
+ </div>
+
+
+
+</body>
+
+{% endblock %}

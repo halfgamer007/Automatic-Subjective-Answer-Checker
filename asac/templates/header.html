@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link href = "{{ url_for('static',filename='css/bootstrap.min.css')}}" rel ="stylesheet">
+    <title>Pbl</title>
+</head>
+
+
+
+<!--header-->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/" ><h2>ASAC</h2></a>
+
+<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    {% if session.logged_in %}
+        <ul class="navbar-nav ml-auto">
+
+        <ul class="navbar-nav ml-auto">
+
+        <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" style ="  right: 0; left: auto;">
+        <a class="dropdown-item" href="/logout">Logout</a>
+        <a class="dropdown-item" href="/about">About</a>
+        </div>
+        </div>
+    </ul>
+    {% else %}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/register">Sign up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+    {% endif %}
+</div>
+</nav>
+
+
+<!-- Modal sign up-->
+    <div class="modal fade" id="Modalsignup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="0ModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method=post action="/register/">
+                        <dl>
+
+                        <dt><label for="username">Username</label>
+                        <dd><input class="form-control" id="username" name="username" type="text" value="">
+
+                        </dd>
+
+
+                        <dt><label for="password">Password</label>
+                        <dd><input class="form-control" id="password" name="password" type="password" value="">
+
+                        </dd>
+
+
+                        <dt><label for="confirm">Repeat Password</label>
+                        <dd><input class="form-control" id="confirm" name="confirm" type="password" value="">
+
+                        </dd>
+
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--modal login -->
+    <div class="modal fade" id="Modallogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="1ModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                        <h3>Please login:</h3>
+                        <br>
+                        <form action="" class="form" method="post">
+                        <label>Username:</label>
+                        <input type="text" class="form-control" placeholder="Username" name="username" value="">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password" value="">
+                        <input class="btn" type="submit" value="Login" style="background-color:#FFD166;color:#000">
+                        </form>
+
+                        <div class="container">
+                        <br><p>No account? <a href='/Sign UP'>Sign UP here</a></p>
+                        <br>
+
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- BOdy -->
+
+<body background="/static/images/bg1.jpg" style="background-size: 1440px 800px">
+    <div class ="container"  style =" min-height:570px;" >
+   <!-- <div class="border-row" style = "width:100%; margin-bottom:15px;"></div>-->
+   {% with messages = get_flashed_messages()%}
+   {%if messages %}
+   {% for message in messages %}
+   <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+   {{message}}
+
+   </div>
+   {% endfor %}
+   {% endif %}
+   {%endwith%}
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src=" {{ url_for('static',filename = 'js/bootstrap.min.js')}}"></script>
+    <div class ="container"  min-height="100%" max-width="80%">
+
+        {% block body %}
+        {% endblock %}
+    </div>
+    </div>
+</body>
+<!--Footer-->
+<footer class="page-footer font-small stylish-color-dark pt-4 mt-4 bg-dark">
+
+    <!--Footer Links-->
+    <div class="container text-center text-md-left">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-4">
+                <font color="white">
+                <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Made by:</h5>
+                <p>DARSHAN<br>NAYAN<br>NAVIN<br>VYAS<br>SAHIL</p>
+                </font>
+            </div>
+
+            <!--/.First column-->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!--Second column-->
+            <div class="col-md-2 mx-auto">
+                <font color="white">
+                <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Emails</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        Kadamdsit16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Joshint16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Joshinnit16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Vyaskit16e@student.mes.ac.in
+                    </li>
+                    <li>
+                        Kaduswit16e@student.mes.ac.in
+                    </li>
+                </ul>
+                </font>
+            </div>
+            <!--/.Second column-->
+
+
+
+
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        <font color="white">© 2018 Copyright:</font>
+        <a href="https://pce.ac.in"> Pillai College of Engineering </a>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+</html>
