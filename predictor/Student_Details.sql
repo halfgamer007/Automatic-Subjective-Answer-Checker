@@ -1,0 +1,111 @@
+create table Student_Details
+(
+    roll_no int primary key,
+    name char(20),
+    attendance_percent int,
+    no_of_kt int,
+    sincerity char(20),
+    dist_from_home int,
+    UT_percent int
+);
+
+insert into student_details values(001,'Shreyas Birajdar',68,6,'Average',50,45);
+insert into student_details values(002,'Vyas Kumar',90,4,'Good',51,39);
+insert into student_details values(003,'Afia Shaikh',95,4,'Poor',10,48);
+insert into student_details values(004,'Simran Garud',72,1,'Poor',70,62);
+insert into student_details values(005,'Chinmay Chavan',76,2,'Good',30,68);
+insert into student_details values(006,'Chinmayi Chavan',84,0,'Average',20,55);
+insert into student_details values(007,'Alfia Khan',42,4,'Poor',90,33);
+insert into student_details values(008,'Zarina Akhtar',50,1,'Poor',70,49);
+insert into student_details values(009,'Shoaib Ansari',92,0,'Good',60,78);
+insert into student_details values(010,'Arya Stark',60,0,'Poor',30,71);
+insert into student_details values(011,'Sahil Kadu',80,0,'Average',10,78);
+insert into student_details values(012,'Najma Shaikh',88,0,'Good',20,85);
+insert into student_details values(013,'Shivam Fhafve',48,8,'Poor',60,39);
+insert into student_details values(014,'Aayushi Jha',68,2,'Poor',10,53);
+insert into student_details values(015,'Shraddha Singh',82,0,'Good',15,67);
+insert into student_details values(016,'Shiva Thapa',65,0,'Average',20,38);
+insert into student_details values(017,'Prachi Joshi',78,1,'Average',25,73);
+insert into student_details values(018,'Rohini Dixit',76,2,'Poor',30,65);
+insert into student_details values(019,'Sujit Gate',58,0,'Average',52,60);
+insert into student_details values(020,'Digvijay Jadhav',78,2,'Good',10,70);
+insert into student_details values(021,'Shreya Singh',63,3,'Poor',30,40);
+insert into student_details values(022,'Shruti Mhatre',70,0,'Average',10,56);
+insert into student_details values(023,'Sagarika Chandel',79,0,'Good',10,65);
+insert into student_details values(024,'Vishal Singh',88,0,'Good',50,83);
+insert into student_details values(025,'Rinkesh Yadav',81,9,'Average',10,48);
+insert into student_details values(026,'Dikshita Yadav',63,3,'Poor',70,47);
+insert into student_details values(027,'Carol Ravi',77,0,'Average',40,69);
+insert into student_details values(028,'Shalini Sutar',78,1,'Average',10,62);
+insert into student_details values(029,'Omkar Sardar',89,5,'Poor',80,50);
+insert into student_details values(030,'Shreya Sahu',68,1,'Good',20,58);
+insert into student_details values(031,'Tamanna Ali',86,0,'Good',20,73);
+insert into student_details values(032,'Rohan Rai',48,6,'Poor',10,33);
+insert into student_details values(033,'Rahul Punia',72,1,'Average',30,49);
+insert into student_details values(034,'Shivani Gupta',81,0,'Good',10,76);
+insert into student_details values(035,'Abhishek Dixit',78,2,'Average',40,59);
+insert into student_details values(036,'Sairaj Sodekar',45,5,'Poor',10,31);
+insert into student_details values(037,'Shreya Gupta',52,3,'Poor',70,42);
+insert into student_details values(038,'Monika Kar',72,1,'Average',20,68);
+insert into student_details values(039,'Gaurav Nikam',68,1,'Average',50,60);
+insert into student_details values(040,'Shraddha Birajdar',83,0,'Good',30,78);
+insert into student_details values(041,'Yashraj Garud',63,4,'Poor',10,40);
+insert into student_details values(042,'Navin Joshi',61,1,'Average',51,42);
+insert into student_details values(043,'Nayan Joshi',64,0,'Good',50,71);
+insert into student_details values(044,'Prajakta Bhor',80,0,'Good',10,72);
+insert into student_details values(045,'Rutuja Yadav',78,1,'Average',30,55);
+insert into student_details values(046,'Aayushi Jain',62,3,'Poor',10,37);
+insert into student_details values(047,'Ricky Bobby',71,4,'Average',90,53);
+insert into student_details values(048,'Anchal Malik',55,3,'Poor',40,45);
+insert into student_details values(049,'Pranali Pawar',79,0,'Good',10,66);
+insert into student_details values(050,'Jayshree Dey',59,2,'Average',60,52);
+insert into student_details values(051,'Ajinkya Chavan',67,1,'Average',55,68);
+insert into student_details values(052,'Siddhant Kumar',88,0,'Good',15,80);
+insert into student_details values(053,'Shruti Menon',80,1,'Good',20,69);
+insert into student_details values(054,'Hemant Pitale',76,0,'Average',40,59);
+insert into student_details values(055,'Siddhi Bankhele',79,1,'Good',10,65);
+insert into student_details values(056,'Deepali Yadav',70,0,'Good',60,65);
+insert into student_details values(057,'Anup Singh',55,7,'Poor',30,32);
+insert into student_details values(058,'Kalpita Gawde',79,0,'Average',20,60);
+insert into student_details values(059,'Mayuri Malkani',61,4,'Poor',40,41);
+insert into student_details values(060,'Arya Nair',80,0,'Good',40,76);
+insert into student_details values(061,'Abhishek Kadam',40,6,'Poor',10,29);
+insert into student_details values(062,'Suraj Kadu',43,5,'Poor',10,30);
+insert into student_details values(063,'Anushka Mahajan',70,0,'Average',20,64);
+insert into student_details values(064,'Devika Dasgupta',83,0,'Good',60,80);
+insert into student_details values(065,'Monika Kaur',28,3,'Poor',40,48);
+insert into student_details values(066,'Zaheer Khan',78,1,'Good',80,76);
+insert into student_details values(067,'Abhishek Shukla',85,0,'Good',10,79);
+insert into student_details values(068,'Ruchi Saple',53,4,'Poor',70,38);
+insert into student_details values(069,'Gaurav Singh',73,0,'Average',20,68);
+insert into student_details values(070,'Viral Devani',81,0,'Good',10,67);
+insert into student_details values(071,'Deep Devani',60,3,'Poor',10,51);
+insert into student_details values(072,'Roshani Jadhav',77,1,'Average',40,72);
+insert into student_details values(073,'Zoya Shaikh',65,4,'Average',50,50);
+insert into student_details values(074,'Nimish Patel',55,5,'Poor',30,49);
+insert into student_details values(075,'Anushka Dhole',67,2,'Average',10,56);
+insert into student_details values(076,'Akhilesh Kumar',37,4,'Poor',30,50);
+insert into student_details values(077,'Gaurav Sharma',92,0,'Good',40,81);
+insert into student_details values(078,'Babita Bera',87,0,'Good',20,78);
+insert into student_details values(079,'Aditya Divekar',59,9,'Poor',10,42);
+insert into student_details values(080,'Arushi Sakharkar',70,2,'Average',40,67);
+insert into student_details values(081,'Aashba Hinduja',81,0,'Good',10,69);
+insert into student_details values(082,'Yerusha Jadhav',68,1,'Poor',80,63);
+insert into student_details values(083,'Niha Joshi',50,5,'Poor',90,33);
+insert into student_details values(084,'Vaibhav Kadu',56,4,'Poor',30,38);
+insert into student_details values(085,'Avinash Solse',79,0,'Average',10,69);
+insert into student_details values(086,'Vineet Ahuja',82,0,'Good',40,73);
+insert into student_details values(087,'Bhakti Dhuri',62,2,'Poor',60,47);
+insert into student_details values(088,'Sajin Thomas',85,0,'Good',10,82);
+insert into student_details values(089,'Junaid Ansari',78,1,'Average',70,59);
+insert into student_details values(090,'Harshal Salunke',71,0,'Average',20,73);
+insert into student_details values(091,'Kaustubh Mhatre',63,4,'Poor',20,39);
+insert into student_details values(092,'Manali Sawant',75,0,'Good',10,74);
+insert into student_details values(093,'Saurav Pal',68,1,'Average',10,52);
+insert into student_details values(094,'Porshia Rai',82,0,'Good',30,77);
+insert into student_details values(095,'Sanjana Sahu',57,7,'Poor',20,37);
+insert into student_details values(096,'Abhishek Shetty',76,1,'Average',10,72);
+insert into student_details values(097,'Tejas Karle',56,3,'Poor',10,52);
+insert into student_details values(098,'Ishika Dubey',81,0,'Good',30,75);
+insert into student_details values(099,'Manvi Choudhary',79,0,'Average',60,81);
+insert into student_details values(100,'Kavan Bhatt',97,0,'Good',50,84);
